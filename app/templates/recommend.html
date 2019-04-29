@@ -1,0 +1,22 @@
+{% block content %}
+<html>
+  <body>
+
+  <h1>Text Input</h1>
+
+  <form name="Movie recomendation" action="/recommend/recommend_check" method="POST">
+    Name of movie:<br>
+    <input type="text" name="movie_name" value={{request.form.movie_name}}>
+    <br>
+    User:<br>
+    <input type="text" name="user" value={{request.form.user}}>
+    <br>
+    Why it should be recommended:<br>
+    <textarea name="msg" cols="100" rows="20" value={{request.form.msg}}></textarea>
+    <br><br>
+    <button type = 'submit'> Submit</button>
+  </form>
+
+  </body>
+</html>
+{% endblock %}

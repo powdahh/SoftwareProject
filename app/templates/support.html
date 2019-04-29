@@ -1,0 +1,22 @@
+{% block content %}
+<html>
+  <body>
+
+  <h1>Support Input</h1>
+
+  <form name="E-Mail" action="/support/support_confirm" method="POST">
+    Enter your own email:<br>
+    <input type="text" name="email" value={{request.form.email}}>
+    <br>
+    Username:<br>
+    <input type="text" name="user" value={{request.form.user}}>
+    <br>
+    Message:<br>
+    <textarea name="message" cols="100" rows="20" value={{request.form.message}}></textarea>
+    <br><br>
+    <button type = 'submit'> Submit</button>
+  </form>
+
+  </body>
+</html>
+{% endblock %}

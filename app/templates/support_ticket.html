@@ -1,0 +1,15 @@
+{% block content %}
+<title>List of support tickets</title>
+
+<form name="E-Mail" action="/support/ticket_resolved" method="POST">
+    Ticket to change:<br>
+    <input type="text" name="ticket" value={{request.form.ticket}}>
+    
+    <button type = 'submit'> Submit</button>
+</form>
+<ul>
+{% for ticket in ticket %}
+  <li><a>{{ ticket }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

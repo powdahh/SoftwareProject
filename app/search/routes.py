@@ -27,7 +27,6 @@ def search_page():
         else:
             #return data
 
-
             return redirect(url_for("search.search_results_page", data=data))
     return render_template("search_results.html", data=data)
 

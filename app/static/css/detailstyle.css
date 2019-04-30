@@ -81,7 +81,25 @@ input[type=text]:focus
 	color: white;
 }
 
-button[type=submit]
+textarea
+{
+	border: 1px solid #D4AF8F;
+	width: 100%;
+	height: 30px;
+	border-radius: 9px;
+	background-color: #181818;
+	color: white;
+}
+
+textarea:focus
+{
+	border: 2px solid #D4AF37;
+	border-radius: 9px;
+	background-color: #181818;
+	color: white;
+}
+
+input[type=submit]
 {
 	font-family: Verdana;
 	font-size: 20px;
@@ -93,7 +111,7 @@ button[type=submit]
 	transition-duration: 0.4s;
 }
 
-button[type=submit]:hover
+input[type=submit]:hover
 {
 	background-color: #D4AF37;
 	color:#000000;

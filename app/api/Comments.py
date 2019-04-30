@@ -11,9 +11,9 @@ def get_comment(movie_id):
     search = data["titleID"]
 
     myDB = Database.dbConnection()
-    print(myDb)
+    print(myDB)
     sqlString = "Select user, review from Comments where movie_id = '234'"
-    result = Database.selectStatement(myDb, sqlString)
+    result = Database.selectStatement(myDB, sqlString)
     cast_fetch = result.fetchall()
     completeInfo = {}
     for row in cast_fetch:
@@ -24,8 +24,14 @@ def get_comment(movie_id):
 
         }
 
-    return json.dumps(cast_fetch)
+    return json.dumps(movie_id)#cast_fetch)
 
+@api.route('/insert_comment', methods=["POST"])
+def insert_comment():
+    if request.method == 'POST':
+        movie_id = request.form.get('movie_id', None)
+        comment = request.form.get('text', None)
+        user_id = request.form.get('user', None)
 
 @api.route('/submit_comment', methods=["POST"])
 def create_comment():
@@ -37,8 +43,9 @@ def create_comment():
 
         myDB = Database.dbConnection()
         print(myDB)
+        print(movie_id)
         sqlString = "Select * from Comments where movie_id = '234', user_id = '2'"
-        result = Database.selectStatement(myDb, sqlString)
+        result = Database.selectStatement(myDB, sqlString)
         cast_fetch = result.fethcall()
 
         if cast_fetch is None:
@@ -53,6 +60,6 @@ def create_comment():
         else:
             res = {"res": "Comment already made"}
 
-            return json.dumps(res)
+    return json.dumps(movie_id)
 
 #End Code Syed for Review
